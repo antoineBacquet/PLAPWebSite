@@ -42,6 +42,16 @@ class CharApi
      */
     private $refreshToken;
 
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="expireOn", type="datetime")
+     */
+    private $expireOn;
+
+
     /**
      * @var string
      *
@@ -58,6 +68,13 @@ class CharApi
     private $user;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="lastEmail", type="integer",nullable=false,  options={"default":0})
+     */
+    private $lastEmail;
+
+    /**
      * @var boolean
      *
      */
@@ -68,6 +85,8 @@ class CharApi
      *
      */
     public $portrait = null;
+
+
 
 
     /**
@@ -199,5 +218,101 @@ class CharApi
     {
         return $this->user;
     }
-}
 
+    /**
+     * Set lastEmail
+     *
+     * @param integer $lastEmail
+     *
+     * @return CharApi
+     */
+    public function setLastEmail($lastEmail)
+    {
+        $this->lastEmail = $lastEmail;
+    
+        return $this;
+    }
+
+    /**
+     * Get lastEmail
+     *
+     * @return integer
+     */
+    public function getLastEmail()
+    {
+        return $this->lastEmail;
+    }
+
+
+    /**
+     * Set createDate
+     *
+     * @param \DateTime $createDate
+     *
+     * @return CharApi
+     */
+    public function setCreateDate($createDate)
+    {
+        $this->createDate = $createDate;
+    
+        return $this;
+    }
+
+    /**
+     * Get createDate
+     *
+     * @return \DateTime
+     */
+    public function getCreateDate()
+    {
+        return $this->createDate;
+    }
+
+    /**
+     * Set expireIn
+     *
+     * @param integer $expireIn
+     *
+     * @return CharApi
+     */
+    public function setExpireIn($expireIn)
+    {
+        $this->expireIn = $expireIn;
+    
+        return $this;
+    }
+
+    /**
+     * Get expireIn
+     *
+     * @return integer
+     */
+    public function getExpireIn()
+    {
+        return $this->expireIn;
+    }
+
+    /**
+     * Set expireOn
+     *
+     * @param \DateTime $expireOn
+     *
+     * @return CharApi
+     */
+    public function setExpireOn($expireOn)
+    {
+        $this->expireOn = $expireOn;
+    
+        return $this;
+    }
+
+    /**
+     * Get expireOn
+     *
+     * @return \DateTime
+     */
+    public function getExpireOn()
+    {
+        return $this->expireOn;
+    }
+}

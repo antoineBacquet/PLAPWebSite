@@ -168,7 +168,7 @@ class CommandController extends Controller
         $parameters['command'] = $command;
 
         $proposedForm = $this->createFormBuilder()
-            ->add('prix_propose', TextType::class, array('data' => $command->getEstimatedPrice()))
+            ->add('prix_propose', NumberType::class, array('data' => $command->getEstimatedPrice()))
             ->add('save', SubmitType::class, array('label' => 'Proposer un prix'))
             ->getForm();
 

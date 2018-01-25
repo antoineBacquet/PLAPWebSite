@@ -121,8 +121,9 @@ class MainController extends Controller
         //echo curl_errno($ch) . '<br/>';
         //echo curl_error($ch) . '<br/>';
 
-            curl_close($ch);
+        curl_close($ch);
         if ($result === false) {
+            //die(curl_error($ch));
             throw $this->createNotFoundException('Error from ccp.');
         }
 
